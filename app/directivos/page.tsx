@@ -5,24 +5,32 @@ export default function Directivos() {
    * Reemplazá este correo por la dirección oficial
    * en la que recibirán la documentación.
    */
-  const emailInscripciones = "inscripciones@institucion.edu.ar";
+  const emailInscripciones = "despenaderos.ds@escuelasproa.edu.ar";
 
   return (
     <div className="pagina-directivos">
       {/* NAVBAR */}
       <nav className="navbar">
-        <div className="logo">
-          <h2>InfoProA</h2>
-          <span>Despeñaderos</span>
-        </div>
+         <Link href="/" className="identidad-institucional">
+          <div className="logo">
+            <img
+              src="/logo_proaa.jpg"
+              alt="Logo de ProA Despeñaderos"
+            />
+          </div>
 
-        <div className="menu">
-          <Link href="/">Inicio</Link>
-          <Link href="/alumnos">Alumnos</Link>
-          <Link href="/directivos">Directivos</Link>
+          <div className="nombre-institucion">
+            <strong>InfoProA</strong>
+            <span>Despeñaderos</span>
+          </div>
+        </Link>
+
+       <nav className="menu" aria-label="Navegación principal">
+          <Link href="/homepage">Inicio</Link>
           <Link href="/PAICOR">PAICOR</Link>
           <Link href="/profesores">Profesores</Link>
-        </div>
+          <Link href="/alumnos">Alumnos</Link>
+        </nav>
       </nav>
 
       {/* CONTENIDO PRINCIPAL */}
@@ -48,32 +56,16 @@ export default function Directivos() {
 
             <p>
               Aquí podrán consultar los requisitos de inscripción, conocer las
-              formas de presentación de la documentación, acceder al portal de
-              CiDi y encontrar tutoriales para utilizar la página web.
+              formas de presentación de la documentación y acceder al portal de
+              CiDi.
             </p>
 
-            <div className="botones-directivos">
-              <a
-                href="#inscripciones"
-                className="boton-directivos boton-principal-directivos"
-              >
-                Ver requisitos de inscripción
-              </a>
-
-              <a
-                href="#tutoriales"
-                className="boton-directivos boton-secundario-directivos"
-              >
-                Ver tutoriales
-              </a>
-            </div>
           </div>
 
           {/* TARJETA PRINCIPAL */}
           <div className="tarjeta-directivos">
-            <div className="icono-directivos">🏫</div>
 
-            <h2>Información institucional</h2>
+            <h1>Información institucional</h1>
 
             <p>
               Un espacio para acceder de forma simple y ordenada a los
@@ -83,85 +75,25 @@ export default function Directivos() {
             <div className="lista-directivos">
               <div>
                 <strong>01</strong>
-                <span>Requisitos de inscripción</span>
+                 <a
+                href="#inscripciones"
+                className="boton-directivos boton-secundario-directivos"
+              >
+                Ver requisitos de inscripción
+              </a>
               </div>
 
               <div>
                 <strong>02</strong>
-                <span>Acceso al portal CiDi</span>
-              </div>
+                 <a
+                href="#portal-cidi"
+                className="boton-directivos boton-secundario-directivos"
+              >
+                Consultar informacion en CiDi
+              </a>
 
-              <div>
-                <strong>03</strong>
-                <span>Tutoriales de la página web</span>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* ACCESOS PRINCIPALES */}
-        <section className="funciones-directivos">
-          <div className="titulo-directivos">
-            <span>INFORMACIÓN Y SERVICIOS</span>
-
-            <h2>Accesos principales</h2>
-
-            <p>
-              Seleccioná una opción para consultar información o acceder al
-              servicio correspondiente.
-            </p>
-          </div>
-
-          <div className="funciones-grid">
-            <a href="#inscripciones" className="funcion-directivo">
-              <div className="icono-funcion">📋</div>
-
-              <h3>Inscripciones</h3>
-
-              <p>
-                Consultá los requisitos y las modalidades disponibles para
-                presentar la documentación.
-              </p>
-
-              <span className="enlace-funcion">
-                Ver requisitos →
-              </span>
-            </a>
-
-            <a
-              href="https://cidi.cba.gov.ar/portal-publico/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="funcion-directivo"
-            >
-              <div className="icono-funcion">🔐</div>
-
-              <h3>Portal CiDi</h3>
-
-              <p>
-                Ingresá al portal de Ciudadano Digital para consultar notas,
-                inasistencias y otra información escolar disponible.
-              </p>
-
-              <span className="enlace-funcion">
-                Ingresar a CiDi →
-              </span>
-            </a>
-
-            <a href="#tutoriales" className="funcion-directivo">
-              <div className="icono-funcion">💻</div>
-
-              <h3>Tutoriales</h3>
-
-              <p>
-                Accedé a guías sencillas para aprender a utilizar las funciones
-                disponibles en la página web.
-              </p>
-
-              <span className="enlace-funcion">
-                Ver tutoriales →
-              </span>
-            </a>
           </div>
         </section>
 
@@ -270,14 +202,6 @@ export default function Directivos() {
               </div>
 
               <a
-                href={`mailto:${emailInscripciones}?subject=Documentación para inscripción`}
-                className="boton-directivos boton-principal-directivos"
-              >
-                Enviar documentación por correo
-              </a>
-
-              <a
-                href={`mailto:${emailInscripciones}`}
                 className="correo-inscripciones"
               >
                 {emailInscripciones}
@@ -338,89 +262,6 @@ export default function Directivos() {
           </div>
         </section>
 
-        {/* TUTORIALES */}
-        <section id="tutoriales" className="seccion-tutoriales-directivos">
-          <div className="titulo-directivos">
-            <span>AYUDA Y ORIENTACIÓN</span>
-
-            <h2>Tutoriales para utilizar la página</h2>
-
-            <p>
-              Consultá las siguientes guías para conocer las principales
-              funciones del sitio.
-            </p>
-          </div>
-
-          <div className="tutoriales-grid">
-            <article className="tarjeta-tutorial">
-              <div className="numero-tutorial">01</div>
-
-              <div className="icono-tutorial">🧭</div>
-
-              <h3>Cómo navegar por la página</h3>
-
-              <p>
-                Aprendé a utilizar el menú principal y a ingresar a cada uno de
-                los espacios de la institución.
-              </p>
-
-              <Link href="/tutoriales/navegacion">
-                Ver tutorial →
-              </Link>
-            </article>
-
-            <article className="tarjeta-tutorial">
-              <div className="numero-tutorial">02</div>
-
-              <div className="icono-tutorial">📎</div>
-
-              <h3>Cómo enviar documentación</h3>
-
-              <p>
-                Conocé cómo preparar, adjuntar y enviar correctamente los
-                archivos solicitados.
-              </p>
-
-              <Link href="/tutoriales/documentacion">
-                Ver tutorial →
-              </Link>
-            </article>
-
-            <article className="tarjeta-tutorial">
-              <div className="numero-tutorial">03</div>
-
-              <div className="icono-tutorial">🔑</div>
-
-              <h3>Cómo ingresar a CiDi</h3>
-
-              <p>
-                Seguí los pasos necesarios para acceder al portal de Ciudadano
-                Digital y consultar información.
-              </p>
-
-              <Link href="/tutoriales/cidi">
-                Ver tutorial →
-              </Link>
-            </article>
-
-            <article className="tarjeta-tutorial">
-              <div className="numero-tutorial">04</div>
-
-              <div className="icono-tutorial">❓</div>
-
-              <h3>Preguntas frecuentes</h3>
-
-              <p>
-                Encontrá respuestas a las dudas más comunes sobre el uso de la
-                página y sus servicios.
-              </p>
-
-              <Link href="/tutoriales/preguntas-frecuentes">
-                Ver respuestas →
-              </Link>
-            </article>
-          </div>
-        </section>
       </main>
 
       {/* FOOTER */}

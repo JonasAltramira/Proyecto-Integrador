@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Inicio() {
   const imagenesCarrusel = [
     {
-      src: "../public/laboratorio.jpg",
+      src: "/laboratorio.jpg",
       alt: "Edificio de la institución educativa",
       categoria: "Nuestra institución",
       titulo: "Un espacio para aprender y crecer",
@@ -14,7 +14,7 @@ export default function Inicio() {
         "Conocé los espacios que forman parte de nuestra comunidad educativa.",
     },
     {
-      src: "/institucion/estudiantes.jpg",
+      src: "/institucion.jpg",
       alt: "Estudiantes realizando actividades escolares",
       categoria: "Estudiantes",
       titulo: "Aprendizaje, participación y proyectos",
@@ -22,47 +22,12 @@ export default function Inicio() {
         "Acompañamos a nuestros estudiantes durante todo su recorrido educativo.",
     },
     {
-      src: "/institucion/novedades.jpg",
+      src: "/actividadesproa.jpg",
       alt: "Actividades y novedades de la institución",
       categoria: "Novedades",
       titulo: "Todo lo que sucede en InfoProA",
       descripcion:
         "Consultá actividades, eventos y noticias importantes de la institución.",
-    },
-  ];
-
-  const tutoriales = [
-    {
-      numero: "01",
-      icono: "🧭",
-      titulo: "Cómo navegar por la aplicación",
-      descripcion:
-        "Aprendé a utilizar el menú y a ingresar a cada espacio del sistema.",
-      enlace: "/tutoriales/navegacion",
-    },
-    {
-      numero: "02",
-      icono: "🔐",
-      titulo: "Cómo iniciar sesión",
-      descripcion:
-        "Conocé los pasos para ingresar de manera segura con tu correo institucional.",
-      enlace: "/tutoriales/iniciar-sesion",
-    },
-    {
-      numero: "03",
-      icono: "📄",
-      titulo: "Cómo consultar información",
-      descripcion:
-        "Encontrá documentos, horarios, novedades y recursos institucionales.",
-      enlace: "/tutoriales/consultas",
-    },
-    {
-      numero: "04",
-      icono: "📎",
-      titulo: "Cómo enviar documentación",
-      descripcion:
-        "Aprendé a completar formularios y adjuntar archivos correctamente.",
-      enlace: "/tutoriales/documentacion",
     },
   ];
 
@@ -102,19 +67,12 @@ export default function Inicio() {
           </div>
         </Link>
 
-        <nav className="menu" aria-label="Navegación principal">
-          <Link href="/">Inicio</Link>
-          <Link href="/alumnos">Alumnos</Link>
-          <Link href="/directivos">Directivos</Link>
-          <Link href="/PAICOR">PAICOR</Link>
-          <Link href="/profesores">Profesores</Link>
-          <Link href="/#tutoriales">Tutoriales</Link>
-        </nav>
-
-        <Link href="/iniciar-sesion" className="boton-iniciar-sesion">
-          <span aria-hidden="true">🔐</span>
+       <div className="boton-iniciar-sesion">
+        <Link href="/InicioSesion" >
           Iniciar sesión
         </Link>
+       </div>
+
       </header>
 
       <main>
@@ -134,27 +92,11 @@ export default function Inicio() {
               sencilla a la información y los servicios de nuestra institución
               educativa.
             </p>
-
-            <div className="botones-inicio">
-              <Link
-                href="/iniciar-sesion"
-                className="boton-inicio boton-principal-inicio"
-              >
-                Ingresar con correo institucional
-              </Link>
-
-              <a
-                href="#accesos"
-                className="boton-inicio boton-secundario-inicio"
-              >
-                Conocer la aplicación
-              </a>
-            </div>
+              
+            
           </div>
 
           <div className="hero-tarjeta">
-            <div className="icono-hero">🎓</div>
-
             <h2>InfoProA</h2>
 
             <p>
@@ -165,17 +107,32 @@ export default function Inicio() {
             <div className="datos-hero">
               <div>
                 <strong>01</strong>
-                <span>Información institucional</span>
+                <a
+                href="#infoproa"
+                className="boton-inicio boton-secundario-inicio"
+              >
+                Comunidad InfoProA
+              </a>
               </div>
 
-              <div>
+             <div>
                 <strong>02</strong>
-                <span>Recursos educativos</span>
+                <a
+                href="#institucion"
+                className="boton-inicio boton-secundario-inicio"
+              >
+                Nuestra Institución
+              </a>
               </div>
 
-              <div>
+               <div>
                 <strong>03</strong>
-                <span>Comunicación segura</span>
+                <a
+                href="#informacion"
+                className="boton-inicio boton-secundario-inicio"
+              >
+                Información Útil
+              </a>
               </div>
             </div>
           </div>
@@ -183,7 +140,7 @@ export default function Inicio() {
 
         {/* CARRUSEL */}
         <section className="seccion-carrusel">
-          <div className="titulo-seccion">
+          <div className="titulo-seccion" id="infoproa">
             <span>COMUNIDAD INFOPROA</span>
 
             <h2>Conocé nuestra institución</h2>
@@ -258,117 +215,12 @@ export default function Inicio() {
           </div>
         </section>
 
-        {/* ACCESOS */}
-        <section id="accesos" className="accesos-inicio">
-          <div className="titulo-seccion">
-            <span>ACCESOS RÁPIDOS</span>
-            <h2>¿Qué estás buscando?</h2>
-
-            <p>
-              Elegí el espacio correspondiente para acceder a sus recursos y
-              servicios.
-            </p>
-          </div>
-
-          <div className="tarjetas-acceso">
-            <Link href="/alumnos" className="tarjeta-acceso">
-              <div className="acceso-icono">👨‍🎓</div>
-
-              <h3>Alumnos</h3>
-
-              <p>
-                Información, documentación, horarios y herramientas para
-                estudiantes.
-              </p>
-
-              <span>Ingresar →</span>
-            </Link>
-
-            <Link href="/profesores" className="tarjeta-acceso">
-              <div className="acceso-icono">👨‍🏫</div>
-
-              <h3>Profesores</h3>
-
-              <p>
-                Espacio destinado a los docentes y profesores de la
-                institución.
-              </p>
-
-              <span>Ingresar →</span>
-            </Link>
-
-            <Link href="/directivos" className="tarjeta-acceso">
-              <div className="acceso-icono">🏫</div>
-
-              <h3>Directivos</h3>
-
-              <p>
-                Información, herramientas y recursos para la gestión
-                institucional.
-              </p>
-
-              <span>Ingresar →</span>
-            </Link>
-
-            <Link href="/PAICOR" className="tarjeta-acceso">
-              <div className="acceso-icono">🍎</div>
-
-              <h3>PAICOR</h3>
-
-              <p>
-                Información relacionada con el servicio alimentario de la
-                institución.
-              </p>
-
-              <span>Ingresar →</span>
-            </Link>
-          </div>
-        </section>
-
-        {/* TUTORIALES */}
-        <section id="tutoriales" className="seccion-tutoriales-inicio">
-          <div className="titulo-seccion">
-            <span>GUÍAS DE USO</span>
-
-            <h2>Tutoriales de la aplicación</h2>
-
-            <p>
-              Guías sencillas para aprender a utilizar las principales
-              funciones de InfoProA.
-            </p>
-          </div>
-
-          <div className="tutoriales-inicio-grid">
-            {tutoriales.map((tutorial) => (
-              <article
-                className="tarjeta-tutorial-inicio"
-                key={tutorial.titulo}
-              >
-                <span className="numero-tutorial-inicio">
-                  {tutorial.numero}
-                </span>
-
-                <div className="icono-tutorial-inicio">
-                  {tutorial.icono}
-                </div>
-
-                <h3>{tutorial.titulo}</h3>
-                <p>{tutorial.descripcion}</p>
-
-                <Link href={tutorial.enlace}>
-                  Ver tutorial →
-                </Link>
-              </article>
-            ))}
-          </div>
-        </section>
-
         {/* HISTORIA E INFORMACIÓN */}
         <section id="institucion" className="historia-institucion">
           <div className="contenido-historia">
             <div className="imagen-historia">
               <img
-                src="/institucion/historia-escuela.jpg"
+                src="/historiaproa.jpg"
                 alt="Historia de la institución ProA Despeñaderos"
               />
 
@@ -386,42 +238,17 @@ export default function Inicio() {
               <h2>Historia de ProA Despeñaderos</h2>
 
               <p>
-                En esta sección se podrá presentar la historia de la
-                institución, su fecha de creación, los principales momentos de
-                su desarrollo y su vínculo con la comunidad de Despeñaderos.
+                La Escuela ProA Despeñaderos es una institución pública de educación secundaria ubicada en Despeñaderos, Córdoba.
+                Forma parte del programa provincial ProA, que propone integrar las tecnologías de la información y la comunicación a la enseñanza. 
+                La sede de Despeñaderos tiene orientación en Desarrollo de Software, por lo que combina la formación secundaria general con aprendizajes vinculados a la programación y la creación de tecnología. 
+                Su nuevo edificio fue inaugurado en junio de 2022 y cuenta con capacidad prevista para 180 estudiantes.
               </p>
-
-              <p>
-                También podrá incluirse información sobre la propuesta
-                educativa, la orientación de la escuela, sus objetivos y los
-                proyectos desarrollados por estudiantes y docentes.
-              </p>
-
-              <div className="datos-institucion">
-                <div>
-                  <strong>Misión</strong>
-
-                  <p>
-                    Acompañar la formación integral de los estudiantes mediante
-                    una educación innovadora, inclusiva y comprometida.
-                  </p>
-                </div>
-
-                <div>
-                  <strong>Comunidad</strong>
-
-                  <p>
-                    Promover la participación y el trabajo conjunto entre
-                    estudiantes, familias, docentes y directivos.
-                  </p>
-                </div>
-              </div>
 
               <Link
-                href="/institucion"
+                href="https://www.cba.gov.ar/escuelas-proa/"
                 className="boton-inicio boton-principal-inicio"
               >
-                Conocer más sobre la institución
+                Conocé más del programa ProA
               </Link>
             </div>
           </div>
@@ -439,11 +266,14 @@ export default function Inicio() {
             </p>
           </div>
 
-          <div className="informacion-institucional-grid">
+          <div className="informacion-institucional-grid" id="informacion">
             <article>
-              <div className="icono-informacion">📍</div>
-              <h3>Dirección</h3>
-              <p>Completá aquí la dirección oficial de la institución.</p>
+              <a href="https://maps.app.goo.gl/cHg6bTtqrPgm3hDq6">
+                <div className="icono-informacion">📍</div>
+                <h3>Dirección</h3>
+                <p> X5121 Despeñaderos, Córdoba</p>
+                <p> Argentina 734</p>
+              </a>
             </article>
 
             <article>
@@ -455,13 +285,15 @@ export default function Inicio() {
             <article>
               <div className="icono-informacion">✉️</div>
               <h3>Correo institucional</h3>
-              <p>Completá aquí el correo electrónico oficial.</p>
+              <p>despenaderos.ds
+                @escuelasproa.edu.ar</p>
             </article>
 
             <article>
               <div className="icono-informacion">☎️</div>
               <h3>Teléfono</h3>
-              <p>Completá aquí el número de contacto institucional.</p>
+              <p>Celular: 03547 30-3425</p>
+              <p>Fijo: 03547-492000</p>
             </article>
           </div>
         </section>

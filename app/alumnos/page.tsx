@@ -94,18 +94,26 @@ export default function Bienvenida() {
     <div className="pagina-alumnos">
       {/* NAVEGACIÓN */}
       <nav className="navbar">
-        <div className="logo">
-          <h2>InfoProA</h2>
-          <span>Despeñaderos</span>
-        </div>
+         <Link href="/" className="identidad-institucional">
+          <div className="logo">
+            <img
+              src="/logo_proaa.jpg"
+              alt="Logo de ProA Despeñaderos"
+            />
+          </div>
 
-        <div className="menu">
-          <Link href="/">Inicio</Link>
-          <Link href="/alumnos">Alumnos</Link>
+          <div className="nombre-institucion">
+            <strong>InfoProA</strong>
+            <span>Despeñaderos</span>
+          </div>
+        </Link>
+
+        <nav className="menu" aria-label="Navegación principal">
+          <Link href="/homepage">Inicio</Link>
           <Link href="/directivos">Directivos</Link>
           <Link href="/PAICOR">PAICOR</Link>
           <Link href="/profesores">Profesores</Link>
-        </div>
+        </nav>
       </nav>
 
       <main>
@@ -123,8 +131,7 @@ export default function Bienvenida() {
             </h1>
 
             <p>
-              En este espacio vas a encontrar materiales de estudio,
-              documentación, horarios, novedades y fechas importantes de la
+              En este espacio vas a encontrar horarios, novedades y fechas importantes de la
               institución.
             </p>
 
@@ -134,26 +141,10 @@ export default function Bienvenida() {
               directivo.
             </p>
 
-            <div className="botones-alumnos">
-              <a
-                href="#documentacion-academica"
-                className="boton-alumnos boton-principal-alumnos"
-              >
-                Ver documentación
-              </a>
-
-              <a
-                href="#contacto-privado"
-                className="boton-alumnos boton-secundario-alumnos"
-              >
-                Hablar con directivos
-              </a>
-            </div>
           </div>
 
           {/* TARJETA PRINCIPAL */}
           <div className="tarjeta-alumnos">
-            <div className="icono-alumnos">🎓</div>
 
             <h2>Tu espacio escolar</h2>
 
@@ -165,176 +156,34 @@ export default function Bienvenida() {
             <div className="lista-alumnos">
               <div>
                 <strong>01</strong>
-                <span>Materiales y documentación</span>
+                 <a
+                href="#horarios-novedades"
+                className="boton-alumnos boton-secundario-alumnos"
+                >
+                Revisá horarios, ausencias, eventos y cambios institucionales.
+              </a>
               </div>
 
               <div>
                 <strong>02</strong>
-                <span>Horarios y calendario</span>
+                <a
+                href="#calendario-entregas"
+                className="boton-alumnos boton-secundario-alumnos"
+                >
+                Calendario
+              </a>
               </div>
 
               <div>
                 <strong>03</strong>
-                <span>Comunicación privada</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ACCESOS PRINCIPALES */}
-        <section className="accesos-alumnos">
-          <div className="titulo-alumnos">
-            <span>ACCESOS PRINCIPALES</span>
-
-            <h2>¿Qué necesitás consultar?</h2>
-
-            <p>
-              Elegí una sección para acceder a la información correspondiente.
-            </p>
-          </div>
-
-          <div className="accesos-alumnos-grid">
-            <a href="#documentacion-academica" className="acceso-alumno">
-              <div className="icono-acceso">📚</div>
-              <h3>Material académico</h3>
-              <p>Apuntes, actividades y materiales para recuperar contenidos.</p>
-              <span>Ver documentación →</span>
-            </a>
-
-            <a href="#documentacion-personal" className="acceso-alumno">
-              <div className="icono-acceso">🪪</div>
-              <h3>Documentación personal</h3>
-              <p>
-                Consultá qué documentación personal tiene registrada la
-                institución.
-              </p>
-              <span>Consultar documentación →</span>
-            </a>
-
-            <a href="#horarios-novedades" className="acceso-alumno">
-              <div className="icono-acceso">🕒</div>
-              <h3>Horarios y novedades</h3>
-              <p>
-                Revisá horarios, ausencias, eventos y cambios institucionales.
-              </p>
-              <span>Ver novedades →</span>
-            </a>
-
-            <a href="#calendario-entregas" className="acceso-alumno">
-              <div className="icono-acceso">📅</div>
-              <h3>Calendario de entregas</h3>
-              <p>
-                Consultá las fechas importantes compartidas por todos los
-                cursos.
-              </p>
-              <span>Ver calendario →</span>
-            </a>
-
-            <a href="#contacto-privado" className="acceso-alumno">
-              <div className="icono-acceso">🔒</div>
-              <h3>Contacto privado</h3>
-              <p>
-                Informá de manera reservada una situación personal o escolar.
-              </p>
-              <span>Enviar información →</span>
-            </a>
-          </div>
-        </section>
-
-        {/* DOCUMENTACIÓN ACADÉMICA */}
-        <section
-          id="documentacion-academica"
-          className="seccion-alumnos seccion-fondo-claro"
-        >
-          <div className="titulo-alumnos">
-            <span>MATERIAL DE ESTUDIO</span>
-
-            <h2>Documentación académica</h2>
-
-            <p>
-              Encontrá materiales entregados por la institución para comenzar,
-              estudiar o recuperar contenidos.
-            </p>
-          </div>
-
-          <div className="documentacion-grid">
-            {documentacionAcademica.map((documento) => (
-              <article
-                className="tarjeta-documentacion"
-                key={documento.titulo}
-              >
-                <div className="icono-documentacion">
-                  {documento.icono}
-                </div>
-
-                <h3>{documento.titulo}</h3>
-                <p>{documento.descripcion}</p>
-
-                <Link href={documento.enlace}>
-                  Ver documentos →
-                </Link>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* DOCUMENTACIÓN PERSONAL */}
-        <section
-          id="documentacion-personal"
-          className="seccion-alumnos seccion-fondo-blanco"
-        >
-          <div className="titulo-alumnos">
-            <span>LEGAJO PERSONAL</span>
-
-            <h2>Documentación personal</h2>
-
-            <p>
-              Consultá el estado de los documentos presentados ante la
-              institución.
-            </p>
-          </div>
-
-          <div className="contenedor-documentacion-personal">
-            <div className="aviso-privacidad">
-              <div className="icono-aviso">🔐</div>
-
-              <div>
-                <h3>Información protegida</h3>
-
-                <p>
-                  Para visualizar esta información, cada estudiante o adulto
-                  responsable deberá ingresar con una cuenta autorizada. Los
-                  datos del legajo no deben ser públicos.
-                </p>
-              </div>
-            </div>
-
-            <div className="tabla-documentacion">
-              <div className="fila-documentacion encabezado-documentacion">
-                <span>Documento</span>
-                <span>Estado</span>
-              </div>
-
-              {documentosPersonales.map((documento) => (
-                <div
-                  className="fila-documentacion"
-                  key={documento.nombre}
+                <a
+                href="#contacto-privado"
+                className="boton-alumnos boton-secundario-alumnos"
                 >
-                  <span>{documento.nombre}</span>
-
-                  <span className="estado-documentacion">
-                    {documento.estado}
-                  </span>
-                </div>
-              ))}
+                Hablar con directivos
+              </a>
+              </div>
             </div>
-
-            <Link
-              href="/alumnos/documentacion-personal"
-              className="boton-alumnos boton-principal-alumnos"
-            >
-              Ingresar a mi documentación
-            </Link>
           </div>
         </section>
 

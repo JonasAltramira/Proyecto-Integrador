@@ -7,105 +7,81 @@ export default function Profesores() {
 
       {/* NAVBAR */}
       <nav className="navbar">
-        <div className="logo">
-          <h2>InfoProA</h2>
-          <span>Despeñaderos</span>
-        </div>
+         <Link href="/" className="identidad-institucional">
+          <div className="logo">
+            <img
+              src="/logo_proaa.jpg"
+              alt="Logo de ProA Despeñaderos"
+            />
+          </div>
 
-        <div className="menu">
-          <Link href="/">Inicio</Link>
-          <Link href="/alumnos">Alumnos</Link>
+          <div className="nombre-institucion">
+            <strong>InfoProA</strong>
+            <span>Despeñaderos</span>
+          </div>
+        </Link>
+
+       <nav className="menu" aria-label="Navegación principal">
+          <Link href="/homepage">Inicio</Link>
           <Link href="/directivos">Directivos</Link>
           <Link href="/PAICOR">PAICOR</Link>
-          <Link href="/profesores">Profesores</Link>
-        </div>
+          <Link href="/alumnos">Alumnos</Link>
+        </nav>
       </nav>
 
-      {/* BIENVENIDA */}
+      {/* PRESENTACIÓN */}
       <main>
+              <section className="hero-inicio">
+                <div className="hero-contenido">
+                  <p className="etiqueta-inicio">ESPACIO DOCENTE</p>
 
-        <section className="bienvenida-profesores">
+                  <h1>
+                    ¡Bienvenidos,
+                    <br />
+                    <span>al espacio Docente!</span>
+                  </h1>
 
-          <div className="texto-profesores">
-
-            <span className="etiqueta-profesores">
-              ESPACIO DOCENTE
-            </span>
-
-            <h1>
-              ¡Bienvenidos,
-              <br />
-              <span>profesores!</span>
-            </h1>
-
-            <p>
-              Este espacio está destinado a los profesores de
-              nuestra institución.
-            </p>
-
-            <p>
-              Aquí podrán encontrar información de contacto,
+                  <p className="descripcion-inicio">
+                    Aquí podrán encontrar información de contacto,
               documentación y materiales educativos trabajados
               durante los diferentes años escolares.
-            </p>
+                  </p>
+                    
+                  
+                </div>
 
-            <div className="botones-profesores">
+                <div className="hero-tarjeta">
+                  <h2>Espacio docente</h2>
 
-              <a
-                href="#profesores"
-                className="boton-profesores boton-principal-profesores"
-              >
-                Conocer profesores
-              </a>
-
-              <a
-                href="#documentacion"
-                className="boton-profesores boton-secundario-profesores"
-              >
-                Ver documentación
-              </a>
-
-            </div>
-
-          </div>
-
-          <div className="tarjeta-profesores">
-
-            <div className="icono-profesores">
-              👨‍🏫
-            </div>
-
-            <h2>
-              Espacio docente
-            </h2>
-
-            <p>
-              Un lugar pensado para facilitar la comunicación
+                  <p>
+                    Un lugar pensado para facilitar la comunicación
               entre profesores, alumnos y familias.
-            </p>
+                  </p>
 
-            <div className="lista-profesores">
+                  <div className="datos-hero">
+                    <div>
+                      <strong>01</strong>
+                      <a
+                      href="#profesores"
+                      className="boton-inicio boton-secundario-inicio"
+                    >
+                      Conocé a nuestros docentes
+                    </a>
+                    </div>
 
-              <div>
-                <strong>01</strong>
-                <span>Datos de contacto</span>
-              </div>
+                  <div>
+                      <strong>02</strong>
+                      <a
+                      href="#documentacion"
+                      className="boton-inicio boton-secundario-inicio"
+                    >
+                      Documentación
+                    </a>
+                    </div>
 
-              <div>
-                <strong>02</strong>
-                <span>Documentación y materiales</span>
-              </div>
-
-              <div>
-                <strong>03</strong>
-                <span>Información de los docentes</span>
-              </div>
-
-            </div>
-
-          </div>
-
-        </section>
+                  </div>
+                </div>
+              </section>
 
 
         {/* PROFESORES */}
